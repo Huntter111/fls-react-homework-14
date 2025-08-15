@@ -1,0 +1,22 @@
+@import 'tailwindcss';
+.title {
+	font-size: 2.25rem; /* text-4xl */
+	font-weight: 700; /* font-bold */
+	color: #1f2937; /* text-gray-800 */
+	margin-bottom: 1.5rem; /* mb-6 */
+	text-align: center; /* text-center */
+}
+:root {
+	font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+
+	/* color-scheme: light dark;
+	color: rgba(255, 255, 255, 0.87);
+	background-color: #242424; */
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
