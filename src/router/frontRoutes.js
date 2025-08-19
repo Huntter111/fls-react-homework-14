@@ -3,6 +3,8 @@
 export const frontRoutes = {
 	pages: {
 		home: '/',
+		privacyPolicy: '/privacy-policy',
+		termsOfUse: '/terms-of-use',
 		patients: {
 			base: 'patients',
 			edit: 'edit/:id?',
@@ -19,17 +21,17 @@ export const frontRoutes = {
 	},
 	navigate: {
 		patients: {
-			list: '/patients',
+			list: '/patients/',
 			edit: (id) => `edit/${id}`,
 			create: 'edit',
 		},
 		doctors: {
-			list: '/doctors',
+			list: '/doctors/',
 			edit: (id) => `edit/${id}`,
 			create: 'edit',
 		},
 		appointments: {
-			list: '/appointments',
+			list: '/appointments/',
 			edit: (id) => `edit/${id}`,
 			create: 'edit',
 		},

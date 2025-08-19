@@ -39,6 +39,7 @@ export const patientInputsFields = [
 		type: 'text',
 		name: 'notes',
 		placeholder: 'Додаткові нотатки',
+		label: 'Додаткові симптоми',
 	},
 ]
 export const emptyPatientData = {

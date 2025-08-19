@@ -1,10 +1,10 @@
 import { apiRoutes } from '@/api/apiRoutes'
 
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-
+const apiLink = 'https://fls-lesson-14-emr-backend.onrender.com/'
 export const api = createApi({
 	reducerPath: 'api',
-	baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/' }),
+	baseQuery: fetchBaseQuery({ baseUrl: apiLink }),
 	tagTypes: ['Patients', 'Doctors', 'Appointments'],
 	endpoints: (builder) => ({
 		getPatients: builder.query({

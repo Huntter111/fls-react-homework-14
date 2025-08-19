@@ -30,7 +30,6 @@ const PatientsForm = () => {
 		} else {
 			await createPatient(formData)
 		}
-
 		navigate(frontRoutes.navigate.patients.list)
 	}
 	const saveButton = id ? 'Зберегти' : 'Створити'
@@ -63,14 +62,24 @@ const PatientsForm = () => {
 						type="submit"
 						disabled={isSaving || isCreating}
 						className={`w-full sm:w-auto px-6 py-2 rounded-md text-white font-semibold shadow transition
-					${isSaving ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 hover:cursor-pointer active:bg-blue-800'}`}
+    ${
+			isSaving || isCreating
+				? 'bg-gray-400 cursor-not-allowed opacity-70'
+				: 'bg-blue-600 hover:bg-blue-700 hover:cursor-pointer active:bg-blue-800'
+		}`}
 					>
 						{isSaving || isCreating ? 'Збереження...' : saveButton}
 					</button>
+
 					<button
 						disabled={isSaving || isCreating}
-						className="px-4 py-2 font-medium rounded-md border bg-gray-100 hover:bg-gray-200 text-gray-700 hover:cursor-pointer"
-						onClick={() => navigate(frontRoutes.navigate.patients.list)}
+						className={`px-4 py-2 font-medium rounded-md border text-gray-700 transition
+    ${
+			isSaving || isCreating
+				? 'bg-gray-200 cursor-not-allowed opacity-70'
+				: 'bg-gray-100 hover:bg-gray-200 hover:cursor-pointer'
+		}`}
+						onClick={() => navigate(-1)}
 					>
 						Скасувати
 					</button>

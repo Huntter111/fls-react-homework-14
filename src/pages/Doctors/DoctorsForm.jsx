@@ -69,7 +69,7 @@ const DoctorsForm = () => {
 					<button
 						disabled={isUpdatingDoctor || isCreatingDoctor}
 						className="px-4 py-2 font-medium rounded-md border bg-gray-100 hover:bg-gray-200 text-gray-700 hover:cursor-pointer"
-						onClick={() => navigate(frontRoutes.navigate.doctors.list)}
+						onClick={() => navigate(-1)}
 					>
 						Скасувати
 					</button>

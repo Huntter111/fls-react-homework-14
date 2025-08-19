@@ -7,6 +7,8 @@ import Home from '@/pages/Home'
 import Page404 from '@/pages/Page404'
 import PatientsList from '@/pages/Patients'
 import PatientsForm from '@/pages/Patients/PatientsForm'
+import PrivacyPolicy from '@/pages/PrivacyPolicy'
+import TermsOfUse from '@/pages/TermsOfUse'
 import { frontRoutes } from '@/router/frontRoutes'
 
 export const routes = [
@@ -68,6 +70,14 @@ export const routes = [
 						Component: AppointmentForm,
 					},
 				],
+			},
+			{
+				path: frontRoutes.pages.privacyPolicy,
+				Component: PrivacyPolicy,
+			},
+			{
+				path: frontRoutes.pages.termsOfUse,
+				Component: TermsOfUse,
 			},
 			{
 				path: '*',
