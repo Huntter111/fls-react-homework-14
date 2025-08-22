@@ -26,6 +26,7 @@ const getStatusClass = (status) => {
 }
 
 const AppointmentItem = ({ appointmentData }) => {
+	console.log('🚀 ~ AppointmentItem ~ appointmentData:', appointmentData)
 	const { fullDate, fullTime } = getDate(appointmentData?.date)
 	const navigate = useNavigate()
 	const { data: patient } = useGetPatientByIdQuery(appointmentData?.patientId)
@@ -42,10 +43,11 @@ const AppointmentItem = ({ appointmentData }) => {
 	const onEdit = (id) => {
 		navigate(frontRoutes.navigate.appointments.edit(id))
 	}
-	const onDelete = async (id) => {
-		await deleteAppointment(id)
+	const handleDeleteAppointment = async () => {
+		await deleteAppointment(appointmentData?.id)
 	}
-	console.log('🚀 ~ AppointmentItem ~ appointmentData:', appointmentData.id)
+
+	console.log('appointmentData', appointmentData)
 	return (
 		<div className="border border-blue-700 rounded-xl p-6 shadow-md bg-white space-y-5 transition-all duration-300 hover:shadow-lg">
 			{/* Верхній рядок: Дата + Час — Статус */}
@@ -88,7 +90,7 @@ const AppointmentItem = ({ appointmentData }) => {
 
 			<div className="flex justify-center gap-3 pt-2 md:justify-end">
 				<button
-					onClick={() => onEdit(appointmentData.id)}
+					onClick={() => onEdit(appointmentData?.id)}
 					disabled={isDeleting || isUpdating}
 					className="px-5 py-2 text-base font-medium rounded-md transition duration-200 shadow-sm 
 			bg-blue-600 hover:bg-blue-700 text-white
@@ -98,7 +100,7 @@ const AppointmentItem = ({ appointmentData }) => {
 				</button>
 
 				<button
-					onClick={() => onDelete(appointmentData.id)}
+					onClick={handleDeleteAppointment}
 					disabled={isDeleting || isUpdating}
 					className="px-5 py-2 text-base font-medium rounded-md transition duration-200 shadow-sm 
 			bg-red-600 hover:bg-red-700 text-white

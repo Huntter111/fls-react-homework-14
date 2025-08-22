@@ -6,7 +6,6 @@ export const selectOptions = {
 }
 
 export const emptyAppointmentData = {
-	id: '',
 	patientId: '',
 	doctorId: '',
 	date: '',
