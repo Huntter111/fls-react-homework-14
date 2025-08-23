@@ -1,8 +1,8 @@
 import { apiRoutes } from '@/api/apiRoutes'
 
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-// const apiLink = 'https://fls-lesson-14-emr-backend.onrender.com/'
-const apiLink = 'http://localhost:3000/'
+const apiLink = 'https://fls-lesson-14-emr-backend.onrender.com/'
+// const apiLink = 'http://localhost:3000/'
 
 export const api = createApi({
 	reducerPath: 'api',
